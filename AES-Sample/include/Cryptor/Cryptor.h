@@ -10,9 +10,9 @@
 
 @interface Cryptor : NSObject
 
-+ (instancetype _Nullable )new OBJC_UNAVAILABLE("Use shared instance.");
++ (instancetype _Nonnull)new OBJC_UNAVAILABLE("Use shared instance.");
 
-- (instancetype _Nullable )init OBJC_UNAVAILABLE("Use shared instance.");
+- (instancetype _Nonnull)init OBJC_UNAVAILABLE("Use shared instance.");
 
 + (instancetype _Nonnull)sharedInstance;
 

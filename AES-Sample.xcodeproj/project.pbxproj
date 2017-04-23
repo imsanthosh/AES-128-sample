@@ -14,6 +14,9 @@
 		E53CF6131EACBCED008F089A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53CF6111EACBCED008F089A /* LaunchScreen.storyboard */; };
 		E53CF61E1EACBCED008F089A /* AES_SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CF61D1EACBCED008F089A /* AES_SampleTests.swift */; };
 		E53CF6291EACBCED008F089A /* AES_SampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CF6281EACBCED008F089A /* AES_SampleUITests.swift */; };
+		E53CF6381EACC213008F089A /* include in Resources */ = {isa = PBXBuildFile; fileRef = E53CF6361EACC213008F089A /* include */; };
+		E53CF6391EACC213008F089A /* libCryptor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E53CF6371EACC213008F089A /* libCryptor.a */; };
+		E53CF63A1EACC232008F089A /* libCryptor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E53CF6371EACC213008F089A /* libCryptor.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		E53CF6241EACBCED008F089A /* AES-SampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AES-SampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53CF6281EACBCED008F089A /* AES_SampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES_SampleUITests.swift; sourceTree = "<group>"; };
 		E53CF62A1EACBCED008F089A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E53CF6361EACC213008F089A /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
+		E53CF6371EACC213008F089A /* libCryptor.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCryptor.a; sourceTree = "<group>"; };
+		E53CF63C1EACC3CE008F089A /* AES-Sample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AES-Sample-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E53CF6391EACC213008F089A /* libCryptor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E53CF63A1EACC232008F089A /* libCryptor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +107,9 @@
 			children = (
 				E53CF6081EACBCED008F089A /* AppDelegate.swift */,
 				E53CF60A1EACBCED008F089A /* ViewController.swift */,
+				E53CF63C1EACC3CE008F089A /* AES-Sample-Bridging-Header.h */,
+				E53CF6361EACC213008F089A /* include */,
+				E53CF6371EACC213008F089A /* libCryptor.a */,
 				E53CF60C1EACBCED008F089A /* Main.storyboard */,
 				E53CF60F1EACBCED008F089A /* Assets.xcassets */,
 				E53CF6111EACBCED008F089A /* LaunchScreen.storyboard */,
@@ -235,6 +246,7 @@
 				E53CF6131EACBCED008F089A /* LaunchScreen.storyboard in Resources */,
 				E53CF6101EACBCED008F089A /* Assets.xcassets in Resources */,
 				E53CF60E1EACBCED008F089A /* Main.storyboard in Resources */,
+				E53CF6381EACC213008F089A /* include in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,10 +426,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = "$PROJECT_DIR/AES-Sample/include/Cryptor";
 				INFOPLIST_FILE = "AES-Sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AES-Sample",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cryptor.aes.AES-Sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$PROJECT_DIR/AES-Sample/AES-Sample-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,10 +446,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = "$PROJECT_DIR/AES-Sample/include/Cryptor";
 				INFOPLIST_FILE = "AES-Sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AES-Sample",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cryptor.aes.AES-Sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$PROJECT_DIR/AES-Sample/AES-Sample-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -441,6 +469,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "AES-SampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AES-Sample",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cryptor.aes.AES-SampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -455,6 +487,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "AES-SampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AES-Sample",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cryptor.aes.AES-SampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -507,6 +543,7 @@
 				E53CF62F1EACBCED008F089A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E53CF6301EACBCED008F089A /* Build configuration list for PBXNativeTarget "AES-SampleTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +552,7 @@
 				E53CF6321EACBCED008F089A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E53CF6331EACBCED008F089A /* Build configuration list for PBXNativeTarget "AES-SampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +561,7 @@
 				E53CF6351EACBCED008F089A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

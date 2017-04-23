@@ -9,5 +9,6 @@
 #ifndef AES_Sample_Bridging_Header_h
 #define AES_Sample_Bridging_Header_h
 
+#import "Cryptor.h"
 
 #endif /* AES_Sample_Bridging_Header_h */
